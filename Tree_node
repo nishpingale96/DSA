@@ -1,0 +1,12 @@
+```mysql []
+# Write your MySQL query statement below
+select 
+    id,
+    CASE
+     when p_id is null then 'Root'
+     when id  Not in(select p_id from tree where  p_id is not null) then 'Leaf'
+    else 'Inner'
+    End as type 
+FROM Tree;    
+
+```
